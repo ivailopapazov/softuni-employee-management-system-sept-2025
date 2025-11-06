@@ -10,7 +10,7 @@ import { useEffect } from "react"
 function App() {
     const [users, setUsers] = useState([]);
     const [showCreateUser, setShowCreateUser] = useState(false);
-    const [forceRefresh, setForceRefresh] = useState(true);
+    const [refresh, setRefresh] = useState(true);
 
     useEffect(() => {
         fetch('http://localhost:3030/jsonstore/users')
@@ -19,8 +19,11 @@ function App() {
                 setUsers(Object.values(result));
             })
             .catch((err) => alert(err.message));
-    }, [forceRefresh]);
+    }, [refresh]);
 
+    const forceUserRefersh = () => {
+        setRefresh(state => !state);
+    };
 
     const addUserClickHandler = () => {
         setShowCreateUser(true);
@@ -59,7 +62,7 @@ function App() {
         })
             .then(() => {
                 closeUserModalHandler();
-                setForceRefresh(state => !state);
+                forceUserRefersh();
             })
             .catch(err => alert(err.message))
     }
@@ -72,7 +75,7 @@ function App() {
                 <section className="card users-container">
                     <Search />
 
-                    <UserList users={users} />
+                    <UserList users={users} forceUserRefersh={forceUserRefersh} />
 
                     <button className="btn-add btn" onClick={addUserClickHandler}>Add new user</button>
 
