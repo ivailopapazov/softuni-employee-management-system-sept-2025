@@ -46,5 +46,21 @@
       "street": "456 Elm St",
       "streetNumber": "7"
     }
+  },
+  "74ec781a-ec99-4c26-b7cb-5f90cfe0876c": {
+    "_id": "74ec781a-ec99-4c26-b7cb-5f90cfe0876c",
+    "firstName": "Ivo",
+    "lastName": "Papazov",
+    "email": "ivo@abv.bg",
+    "phoneNumber": "1231232",
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg",
+    "createdAt": "2025-11-01T07:22:00.358Z",
+    "updatedAt": "2025-11-01T07:22:00.358Z",
+    "address": {
+      "country": "Bulgaria",
+      "city": "Sofia",
+      "street": "Main",
+      "streetNumber": "1"
+    }
   }
 }
